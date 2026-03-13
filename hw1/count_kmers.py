@@ -33,6 +33,7 @@ def get_kmers(seq: str, k: int) -> Iterator[str]:
 
 
 def main():
+    raise RuntimeError("Fail task2")
     parser = argparse.ArgumentParser(
         description="Count k-mers (4-mers) in fasta file"
     )
