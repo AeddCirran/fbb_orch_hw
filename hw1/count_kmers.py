@@ -41,7 +41,8 @@ def main():
         required=True,
         help="Input fasta file"
     )
-    k = 4
+    k = 2
+    # И еще коммент добавлю, т.к. почему бы и нет 😊
     output = "cnts.json"
     args = parser.parse_args()
 
