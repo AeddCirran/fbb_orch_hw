@@ -9,7 +9,6 @@ def rev_compl(seq: str) -> str:
 
 
 def main():
-    raise RuntimeError("Fail task1")
     parser = argparse.ArgumentParser(
         description="Print rev-compl and GC-content of DNA/RNA seq"
     )
@@ -23,6 +22,7 @@ def main():
     rc_seq = rev_compl(args.seq)
     gc_cont = (rc_seq.upper().count("G") + rc_seq.upper().count("C")) / len(rc_seq)
     print(f'{rc_seq}\n{gc_cont:.3f}')
+    assert 1==0
 
 
 if __name__ == "__main__":
