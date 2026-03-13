@@ -43,7 +43,7 @@ def main():
     )
     parser.add_argument(
         "-k",
-        default=4,
+        default=2,
         help="Len of k-mers"
     )
     parser.add_argument(
@@ -52,6 +52,8 @@ def main():
         default="cnts.json",
         help="Output json file"
     )
+    # И еще коммент добавлю, т.к. почему бы и нет 😊
+
     output = "cnts.json"
     args = parser.parse_args()
 
