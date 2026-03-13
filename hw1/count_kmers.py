@@ -1,9 +1,18 @@
 #!/usr/bin/env python3
 
 import argparse
+import logging
 import json
 from collections import Counter
 from collections.abc import Iterator
+
+
+logging.basicConfig(
+    level=logging.INFO,  # или DEBUG
+    format="{asctime} - {levelname} - {message}",
+    style="{",
+    datefmt="%Y-%m-%d %H:%M",
+)
 
 
 def parse_fa(path: str) -> Iterator[tuple[str, str]]:
@@ -33,7 +42,7 @@ def get_kmers(seq: str, k: int) -> Iterator[str]:
 
 
 def main():
-    raise RuntimeError("Fail task2")
+    logging.info("Starting script")
     parser = argparse.ArgumentParser(
         description="Count k-mers (4-mers) in fasta file"
     )
@@ -61,8 +70,10 @@ def main():
     result = {}
     for seq_id, seq in parse_fa(args.fa):
         counts = Counter(get_kmers(seq, args.k))
+        logging.info("Seq read and calculated: %s", seq_id)
         result[seq_id] = dict(counts)
 
+    logging.info("Writing result")
     with open(args.out, "w") as out_f:
         json.dump(result, out_f, ensure_ascii=False)
 
