@@ -3,14 +3,14 @@
 
 ## Task 1
 ### Файлы:
-[complement.py](complement.py) -- содержит код, написанные в рамках задания 2.2.
+[complement.py](complement.py) -- содержит код, написанный в рамках задания 2.2.
 
 ### Описание:
 Репозиторий был успешно скопирован и заполнен необходимыми файлами. Код, печатающий reverse-complement последовательности и ее GC-состав, был помещен в файл [complement.py](complement.py) и проверен на работоспособность. Файл был сохранен, закоммичен и отправлен на github командой ```git add ./hw1/*; git commit -m "task1"; git push origin main``` . Тег был прикреплен к "голове" командой ```git tag task1``` .
 
 ## Task 2
 ### Файлы:
-[count_kmers.py](count_kmers.py) -- содержит код, написанные в рамках задания 3.1.
+[count_kmers.py](count_kmers.py) -- содержит код, написанный в рамках задания 3.1.
 [test.fna](test.fna) -- fasta файл для тестирования скрипта [count_kmers.py](count_kmers.py).
 [cnts.json](cnts.json) -- результат работы скрипта [count_kmers.py](count_kmers.py) на [test.fna](test.fna).
 
