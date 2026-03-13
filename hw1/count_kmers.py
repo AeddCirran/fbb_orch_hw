@@ -65,8 +65,6 @@ def main():
     with open(args.out, "w") as out_f:
         json.dump(result, out_f, ensure_ascii=False)
 
-    assert 1==0
-
 
 if __name__ == "__main__":
     main()
