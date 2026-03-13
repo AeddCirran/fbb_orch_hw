@@ -1,9 +1,18 @@
 #!/usr/bin/env python3
 
 import argparse
+import logging
 import json
 from collections import Counter
 from collections.abc import Iterator
+
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="{asctime} - {levelname} - {message}",
+    style="{",
+    datefmt="%Y-%m-%d %H:%M",
+)
 
 
 def parse_fa(path: str) -> Iterator[tuple[str, str]]:
@@ -13,6 +22,7 @@ def parse_fa(path: str) -> Iterator[tuple[str, str]]:
         for line in f:
             line = line[:-1]
             if line.startswith(">"):
+                logging.info("Reading seqs from file: %s", seq_id)
                 if seq_id is not None:
                     yield seq_id, seq
                 seq_id, seq = line[1:], ""
@@ -54,18 +64,18 @@ def main():
     )
     # И еще коммент добавлю, т.к. почему бы и нет 😊
 
-    output = "cnts.json"
     args = parser.parse_args()
 
+    logging.info("Starting script")
     result = {}
     for seq_id, seq in parse_fa(args.fa):
         counts = Counter(get_kmers(seq, args.k))
         result[seq_id] = dict(counts)
+        logging.info("Counting k-mers: %s", seq_id)
 
+    logging.info("Writing to file: %s", args.out)
     with open(args.out, "w") as out_f:
         json.dump(result, out_f, ensure_ascii=False)
-
-    raise RuntimeError("Fail task2")
 
 
 if __name__ == "__main__":
