@@ -33,7 +33,6 @@ def get_kmers(seq: str, k: int) -> Iterator[str]:
 
 
 def main():
-    raise RuntimeError("Fail task2")
     parser = argparse.ArgumentParser(
         description="Count k-mers (4-mers) in fasta file"
     )
@@ -65,6 +64,8 @@ def main():
 
     with open(args.out, "w") as out_f:
         json.dump(result, out_f, ensure_ascii=False)
+
+    assert 1==0
 
 
 if __name__ == "__main__":
