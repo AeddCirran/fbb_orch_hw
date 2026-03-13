@@ -41,16 +41,26 @@ def main():
         required=True,
         help="Input fasta file"
     )
-    k = 4
+    parser.add_argument(
+        "-k",
+        default=4,
+        help="Len of k-mers"
+    )
+    parser.add_argument(
+        "--out",
+        "-o",
+        default="cnts.json",
+        help="Output json file"
+    )
     output = "cnts.json"
     args = parser.parse_args()
 
     result = {}
     for seq_id, seq in parse_fa(args.fa):
-        counts = Counter(get_kmers(seq, k))
+        counts = Counter(get_kmers(seq, args.k))
         result[seq_id] = dict(counts)
 
-    with open(output, "w") as out_f:
+    with open(args.out, "w") as out_f:
         json.dump(result, out_f, ensure_ascii=False)
 
 
