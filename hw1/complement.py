@@ -22,6 +22,7 @@ def main():
     rc_seq = rev_compl(args.seq)
     gc_cont = (rc_seq.upper().count("G") + rc_seq.upper().count("C")) / len(rc_seq)
     print(f'{rc_seq}\n{gc_cont:.3f}')
+    raise RuntimeError("Fail task1")
 
 
 if __name__ == "__main__":
