@@ -4,20 +4,19 @@ import argparse
 import logging
 
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="{asctime} - {levelname} - {message}",
-    style="{",
-    datefmt="%Y-%m-%d %H:%M",
-)
-
-
 def rev_compl(seq: str) -> str:
     compl = seq.maketrans("ACGTUacgtu", "ACGTUacgtu")
     return seq.translate(compl)[::-1]
 
 
 def main():
+    logging.basicConfig(
+        level=logging.INFO,
+        format="{asctime} - {levelname} - {message}",
+        style="{",
+        datefmt="%Y-%m-%d %H:%M",
+    )
+
     parser = argparse.ArgumentParser(
         description="Print rev-compl and GC-content of DNA/RNA seq"
     )

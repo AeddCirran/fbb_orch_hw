@@ -7,14 +7,6 @@ from collections import Counter
 from collections.abc import Iterator
 
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="{asctime} - {levelname} - {message}",
-    style="{",
-    datefmt="%Y-%m-%d %H:%M",
-)
-
-
 def parse_fa(path: str) -> Iterator[tuple[str, str]]:
     with open(path, "r") as f:
         seq_id, seq = None, ""
@@ -43,6 +35,13 @@ def get_kmers(seq: str, k: int) -> Iterator[str]:
 
 
 def main():
+    logging.basicConfig(
+        level=logging.INFO,
+        format="{asctime} - {levelname} - {message}",
+        style="{",
+        datefmt="%Y-%m-%d %H:%M",
+    )
+
     parser = argparse.ArgumentParser(
         description="Count k-mers (4-mers) in fasta file"
     )

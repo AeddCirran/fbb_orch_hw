@@ -1,0 +1,34 @@
+name: HW1 test
+on:
+    push:
+        branches:
+            - main
+            - master
+jobs:
+    task1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout repo
+              uses: actions/checkout@v4
+            - name: set up python
+              uses: actions/setup-python@v5
+              with:
+                  python-version: "3.14"
+            - name: chmod
+              run: chmod +x hw1/complement.py
+            - name: test
+              run: |
+                  ./hw1/complement.py --seq CTTGGGTATTTGACTCACGGTCCTCTATTCCGCATCTAGTACTGTGCGTG
+    task2:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout repo
+              uses: actions/checkout@v4
+            - name: set up python
+              uses: actions/setup-python@v5
+              with:
+                  python-version: "3.14"
+            - name: chmod
+              run: chmod +x hw1/count_kmers.py
+            - name: test
+              run: ./hw1/count_kmers.py --fa ./hw1/test.fna
