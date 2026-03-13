@@ -19,11 +19,7 @@ jobs:
               with:
                   python-version: "3.14"
 
-            - name: chmod
-              run: |
-                  chmod +x ./hw1/complement.py
-
-            - name: Test complement script
+            - name: test1
               run: |
                   ./hw1/complement.py --seq CTTGGGTATTTGACTCACGGTCCTCTATTCCGCATCTAGTACTGTGCGTG
 
@@ -39,10 +35,6 @@ jobs:
               with:
                   python-version: "3.14"
 
-            - name: chmod
-              run: |
-                  chmod +x ./hw1/count_kmers.py
-
-            - name: Test k-mer counting script
+            - name: test1
               run: |
                   ./hw1/count_kmers.py --fa ./hw1/test.fna
