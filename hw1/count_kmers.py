@@ -54,7 +54,6 @@ def main():
     )
     # И еще коммент добавлю, т.к. почему бы и нет 😊
 
-    output = "cnts.json"
     args = parser.parse_args()
 
     result = {}
