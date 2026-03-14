@@ -1,14 +1,14 @@
 # ДЗ 1
 Данная директория содержит выполненное ДЗ 1.
 
-## Task 1
+## Задание 2 (Task 1)
 ### Файлы:
 [complement.py](complement.py) -- содержит код, написанный в рамках задания 2.2.
 
 ### Описание:
 Репозиторий был успешно скопирован и заполнен необходимыми файлами. Код, печатающий reverse-complement последовательности и ее GC-состав, был помещен в файл [complement.py](complement.py) и проверен на работоспособность. Файл был сохранен, закоммичен и отправлен на github командой ```git add ./hw1/*; git commit -m "task1"; git push origin main``` . Тег был прикреплен к "голове" командой ```git tag task1``` .
 
-## Task 2
+## Задание 3 (Task 2)
 ### Файлы:
 [count_kmers.py](count_kmers.py) -- содержит код, написанный в рамках задания 3.1.
 
@@ -37,7 +37,7 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 Итоговый файл был успешно сохранен, закоммичен и отправлен на github (```git add count_kmers.py; git commit -m "task2.6"; git push origin main```) .
 
-## Task 3
+## Задание 6 (Task 3)
 ### Файлы:
 [HW1-WF.yaml](../.github/workflows/HW1-WF.yaml) -- файл для тестирования кода, написанный в рамках задания 6.2.
 
