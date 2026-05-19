@@ -73,7 +73,7 @@ def main():
 
     logging.info("Writing to file")
     with open(args.out, "w") as out_f:
-        json.dump(result, out_f, ensure_ascii=False)
+        json.dump(result, out_f)
 
 
 if __name__ == "__main__":
