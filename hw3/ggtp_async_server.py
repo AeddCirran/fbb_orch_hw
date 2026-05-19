@@ -6,7 +6,7 @@ import zlib
 import hashlib
 import numpy as np
 
-DEFAULT_HOST = "0.0.0.0"
+DEFAULT_HOST = "127.0.0.1"
 DEFAULT_PORT = 9999
 BUFFER_SIZE = 1024
 
