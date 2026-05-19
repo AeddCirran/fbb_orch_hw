@@ -72,7 +72,7 @@ def main():
     plt.ylabel("Num")
     plt.grid(axis="y", linestyle="--", alpha=0.7)
 
-    output_img = f"{args.json}.png"
+    output_img = f"{str(args.json)[:-5]}.png"
     plt.savefig(output_img, dpi=150, bbox_inches="tight")
     print(f"Hist saved to {output_img}")
     plt.show()
